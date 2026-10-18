@@ -1,11 +1,13 @@
 """Local Flask server. API credentials never enter a template or browser response."""
 import os
+import re
 import secrets
 import threading
 import time
 from collections import OrderedDict
 from flask import Flask, Response, jsonify, render_template, request, send_from_directory
 from werkzeug.exceptions import HTTPException
+from werkzeug.middleware.proxy_fix import ProxyFix
 from backend import config
 from backend.core.image_processing import enhance
 from backend.engine.codegen import edit_html, extract_html, spec_to_html
@@ -17,6 +19,7 @@ app = Flask(
     static_folder=str(config.FRONTEND_DIR / "static"),
     static_url_path="/static",
 )
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
 PREVIEWS = OrderedDict()
 PREVIEW_LOCK = threading.Lock()
 app.config["MAX_CONTENT_LENGTH"] = 12 * 1024 * 1024
@@ -25,11 +28,21 @@ app.config["MAX_FORM_MEMORY_SIZE"] = 2 * 1024 * 1024
 @app.before_request
 def local_api_guard():
     if request.path.startswith("/api/"):
-        if request.host.split(":")[0].lower() not in {"127.0.0.1", "localhost"}:
+        host = request.host.split(":")[0].lower()
+        allowed = {"127.0.0.1", "localhost"}
+        if os.getenv("VERCEL") or os.getenv("VERCEL_URL") or host.endswith(".vercel.app"):
+            allowed.add(host)
+        allowed_env = os.getenv("ALLOWED_HOSTS", "")
+        if allowed_env:
+            allowed.update(h.strip().lower() for h in allowed_env.split(",") if h.strip())
+        if host not in allowed:
             return jsonify(error="Use the local Napkin2Code server address."), 403
         origin = request.headers.get("Origin")
-        if origin and origin.rstrip("/") != request.host_url.rstrip("/"):
-            return jsonify(error="This request must come from the Napkin2Code workspace."), 403
+        if origin:
+            def _clean(u):
+                return re.sub(r"^https?://", "", u.rstrip("/"))
+            if _clean(origin) != _clean(request.host_url):
+                return jsonify(error="This request must come from the Napkin2Code workspace."), 403
         if request.method == "POST" and request.headers.get("X-Napkin-Request") != "1":
             return jsonify(error="Please make this request from the Napkin2Code workspace."), 403
 

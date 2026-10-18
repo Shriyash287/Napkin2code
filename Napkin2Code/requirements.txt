@@ -1,1 +1,4 @@
--r backend/requirements.txt
+Flask>=3.1,<4
+google-genai>=1.50,<3
+python-dotenv>=1.1,<2
+Pillow>=11.3,<13
