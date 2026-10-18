@@ -16,7 +16,9 @@ MODEL_LOCK = threading.Lock()
 GEMINI_MODEL = None
 
 def api_key():
-    load_dotenv(BASE_DIR / ".env", override=True)
+    env_file = BASE_DIR / ".env"
+    if env_file.exists():
+        load_dotenv(env_file, override=True)
     key = os.getenv("GEMINI_API_KEY", "").strip()
     if (key.startswith('"') and key.endswith('"')) or (key.startswith("'") and key.endswith("'")):
         key = key[1:-1].strip()
@@ -26,14 +28,20 @@ def api_key():
 
 def current_model():
     global GEMINI_MODEL
-    try:
-        saved = json.loads(MODEL_FILE.read_text(encoding="utf-8"))
-        name = saved.get("name", "")
-        if re.fullmatch(r"(?:models/)?gemma-4-[a-zA-Z0-9.-]+-it", name) and saved.get("image_verified"):
-            GEMINI_MODEL = name
-            return name
-    except (OSError, ValueError, AttributeError):
-        pass
+    candidates = [MODEL_FILE]
+    if os.getenv("VERCEL"):
+        import tempfile
+        candidates.append(Path(tempfile.gettempdir()) / ".model.json")
+    for target in candidates:
+        try:
+            if target.exists():
+                saved = json.loads(target.read_text(encoding="utf-8"))
+                name = saved.get("name", "")
+                if re.fullmatch(r"(?:models/)?gemma-4-[a-zA-Z0-9.-]+-it", name) and saved.get("image_verified"):
+                    GEMINI_MODEL = name
+                    return name
+        except (OSError, ValueError, AttributeError):
+            pass
     GEMINI_MODEL = None
     return None
 
@@ -97,12 +105,23 @@ def discover_model():
                     continue
                 record = {"name": model.name, "display_name": model.display_name,
                           "image_verified": True, "available_gemma": [m.name for m in available]}
-                try:
-                    temporary = MODEL_FILE.with_suffix(".tmp")
-                    temporary.write_text(json.dumps(record, indent=2), encoding="utf-8")
-                    temporary.replace(MODEL_FILE)
-                except OSError:
+                targets = [MODEL_FILE]
+                if os.getenv("VERCEL") or not os.access(BASE_DIR, os.W_OK):
+                    import tempfile
+                    targets.append(Path(tempfile.gettempdir()) / ".model.json")
+                saved = False
+                for target in targets:
+                    try:
+                        temporary = target.with_suffix(".tmp")
+                        temporary.write_text(json.dumps(record, indent=2), encoding="utf-8")
+                        temporary.replace(target)
+                        saved = True
+                        break
+                    except OSError:
+                        continue
+                if not saved:
                     raise RuntimeError("Model verified, but its selection could not be saved. Check workspace write access.") from None
+                GEMINI_MODEL = model.name
                 return record
             raise RuntimeError("Available Gemma 4 models did not pass the image-input check. No model was selected.")
 
