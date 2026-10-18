@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-highest":"#e3e2e4","on-primary-fixed":"#0f0069","error":"#ba1a1a","on-primary-container":"#dad7ff","on-tertiary":"#ffffff","surface-container":"#efedf0","outline-variant":"#c7c4d8","surface-tint":"#4d44e3","secondary-fixed-dim":"#c3c0ff","background":"#faf9fb","inverse-surface":"#2f3032","on-background":"#1b1c1e","surface-container-low":"#f5f3f5","on-error":"#ffffff","tertiary":"#434853","tertiary-fixed-dim":"#c2c6d3","inverse-on-surface":"#f2f0f3","on-primary":"#ffffff","on-secondary":"#ffffff","inverse-primary":"#c3c0ff","on-primary-fixed-variant":"#3323cc","on-error-container":"#93000a","surface-container-lowest":"#ffffff","secondary-fixed":"#e3dfff","primary-container":"#4f46e5","on-surface":"#1b1c1e","surface":"#faf9fb","on-tertiary-fixed-variant":"#424751","on-secondary-container":"#fffbff","surface-container-high":"#e9e8ea","secondary-container":"#6860ef","surface-dim":"#dbd9dc","on-secondary-fixed":"#100069","secondary":"#4e45d5","tertiary-container":"#5b606b","on-secondary-fixed-variant":"#372abf","tertiary-fixed":"#dee2ef","on-surface-variant":"#464555","primary-fixed":"#e2dfff","outline":"#777587","surface-bright":"#faf9fb","on-tertiary-fixed":"#171c25","primary":"#3525cd","surface-variant":"#e3e2e4","error-container":"#ffdad6","primary-fixed-dim":"#c3c0ff","on-tertiary-container":"#d7dbe8"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem",margin:"1.25rem","space-xs":"0.25rem","space-md":"1rem",gutter:"1rem","gutter-lg":"2rem","space-lg":"1.5rem","gutter-md":"1.5rem","space-xl":"2rem","margin-lg":"3rem","margin-md":"2rem","space-2xl":"3rem"},fontFamily:{"label-md":["Inter"],"code-lg":["JetBrains Mono"],"code-sm":["JetBrains Mono"],"body-sm":["Inter"],"headline-md":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"display-lg-mobile":["Inter"],"headline-lg":["Inter"],"code-md":["JetBrains Mono"],"label-sm":["JetBrains Mono"],"display-lg":["Inter"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"500"}],"code-lg":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["22px",{lineHeight:"30px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"21px",letterSpacing:"0em",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"-0.01em",fontWeight:"500"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"600"}],"code-md":["13px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"500"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.025em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Napkin2Code Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wyq4KR_yRXAyDLU49urAqsCHZVeDqG7vLKd7AQJY6Bd0IZDqox1dqe44m3Z1OTmWP7LRrYT3GUmR0U61tTdGwXgFQA1mluQYd0TxhnY-fKkb2BTxLILppMign2ANNJRA0bl0PuY9aBJtG-JWF7_9vYlAtwHaGTRtT9DxL0Cu3G9i3uzSQ6wJlQis5Eeq95UG7cxvOtr6f7lUnW9QTXLO8Q1FQxqPFKJYQyMuWENIPB9jJ8NWTfxzUSEwE"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Napkin2Code</span><span class="font-code-sm text-code-sm bg-surface-container-high text-on-surface-variant px-space-xs py-0.5 rounded">local</span></div><nav class="hidden md:flex items-center gap-space-md" data-active-classes="bg-surface-container text-on-surface font-semibold rounded-lg"><a aria-current="page" class="px-space-sm py-1 transition-colors bg-surface-container text-on-surface font-semibold rounded-lg" data-path="how-it-works" href="#">How it works</a><a class="px-space-sm py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="features" href="#">Features</a><a class="px-space-sm py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="local-setup" href="#">Local setup</a><a class="px-space-sm py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors inline-flex items-center gap-1" data-path="github" href="#">GitHub</a></nav><div class="flex items-center gap-space-md"><a class="px-space-md py-space-sm bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary font-label-md text-label-md rounded-lg shadow-[0_1px_3px_rgba(28,29,31,0.06)] transition-all" data-path="workspace" href="#">Open workspace</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background"><div class="flex flex-col w-full">
+<!-- Top Subtle Ambient Light Layer -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[840px] h-[340px] bg-gradient-to-b from-primary-fixed/40 via-surface-container-low/20 to-transparent blur-3xl pointer-events-none -z-10"></div>
+<!-- Hero Content Header Area -->
+<div class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg pt-space-xl md:pt-space-2xl pb-space-lg text-center flex flex-col items-center">
+<!-- Overline Pill Tag -->
+<div class="inline-flex items-center gap-space-sm px-space-md py-1 bg-surface-container-highest/80 backdrop-blur-md rounded-full shadow-sm mb-space-md">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">v1.2 Local Engine · Llama 3.2 Vision &amp; Qwen 2.5 Coder</span>
+</div>
+<!-- Tagline & Main Hook -->
+<div class="space-y-space-xs max-w-4xl">
+<p class="font-code-md text-code-md text-secondary font-medium tracking-wide uppercase">
+          Sketch it. Scan it. Ship it.
+        </p>
+<h1 class="font-display-lg text-display-lg md:text-[52px] md:leading-[60px] text-on-surface tracking-tight font-bold">
+          Your next website starts on paper.
+        </h1>
+</div>
+<p class="mt-space-md max-w-2xl font-body-lg text-body-lg text-on-surface-variant text-balance">
+        Turn hand-drawn sketches, napkins, and notebook wireframes into working web interfaces with AI running entirely on your own computer.
+      </p>
+<!-- Primary & Secondary CTA Controls -->
+<div class="mt-space-lg flex flex-wrap items-center justify-center gap-space-md">
+<a class="inline-flex items-center gap-space-sm px-space-lg py-space-sm bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary font-label-md text-label-md rounded-lg shadow-md hover:shadow-lg transition-all active:scale-95" data-path="workspace" href="#">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>Start building</span>
+</a>
+<a class="inline-flex items-center gap-space-sm px-space-lg py-space-sm bg-surface-container-lowest/90 hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg shadow-sm transition-all" href="#how-it-works">
+<span class="material-symbols-outlined text-secondary text-[18px]">play_circle</span>
+<span>See how it works</span>
+<kbd class="font-code-sm text-[10px] px-1.5 py-0.5 bg-surface-container rounded text-outline ml-1">demo</kbd>
+</a>
+</div>
+<!-- Offline Guarantee Pill -->
+<div class="mt-space-md inline-flex items-center gap-space-xs text-outline font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>100% On-Device Inference · No Cloud API Keys Required · Zero Telemetry</span>
+</div>
+</div>
+<!-- Signature Visual Demonstration: Three Connected Interactive Panels -->
+<div class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg pb-space-2xl">
+<div class="relative bg-surface-container-lowest/70 backdrop-blur-xl rounded-[20px] shadow-[0_4px_30px_rgba(28,29,31,0.05)] p-space-md md:p-space-lg">
+<!-- Canvas Status Ribbon Bar -->
+<div class="flex items-center justify-between pb-space-md mb-space-md border-b border-surface-container-highest">
+<div class="flex items-center gap-space-md">
+<span class="font-code-sm text-code-sm font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+              pipeline: <span class="text-secondary font-semibold">artisan_cafe_landing.sketch</span>
+</span>
+<span class="hidden md:inline-block font-code-sm text-code-sm text-outline">tokens: 1,842 · latency: 1.4s · local/q4_k_m</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-sm text-code-sm">Ollama v0.4.1</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-sm text-code-sm">GPU Active</span>
+</div>
+</div>
+<!-- 3 Connected Panels Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md relative items-stretch">
+<!-- PANEL 1: Raw Notebook Wireframe Snapshot -->
+<div class="flex flex-col bg-surface-container-low/80 rounded-xl p-space-md shadow-sm relative group overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface font-code-sm text-code-sm flex items-center justify-center font-bold">1</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Physical Wireframe</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">iPhone 14 Photo</span>
+</div>
+<!-- Sketch Viewport with Hand-drawn Look -->
+<div class="relative flex-1 min-h-[340px] bg-[#fbf9f4] rounded-lg p-space-md shadow-inner flex flex-col justify-between overflow-hidden">
+<!-- Grid paper subtle texture -->
+<div class="absolute inset-0 opacity-[0.04] bg-[radial-gradient(#1b1c1e_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none"></div>
+<!-- Top Mock Sketch Elements -->
+<div class="relative z-10 flex flex-col gap-space-sm">
+<!-- Pencil Sketch Nav -->
+<div class="flex items-center justify-between border-b-2 border-dashed border-outline/30 pb-2">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-on-surface-variant font-bold tracking-wider">[BEAN &amp; ROAST]</span>
+<span class="text-[10px] text-outline italic">logo scribble</span>
+</div>
+<div class="flex gap-2 text-[11px] text-outline font-code-sm">
+<span>Menu</span>
+<span>Origin</span>
+<span>[Cart]</span>
+</div>
+</div>
+<!-- Hero Section Scribble -->
+<div class="bg-surface-container-lowest/60 rounded p-space-sm border border-outline/20">
+<div class="h-3 w-3/4 bg-on-surface-variant/20 rounded mb-1.5"></div>
+<div class="h-2 w-1/2 bg-on-surface-variant/15 rounded mb-3"></div>
+<div class="inline-block px-3 py-1 bg-surface-container-highest rounded text-[10px] font-code-sm text-on-surface-variant font-bold">[ CTA: Brew Now -&gt; ]</div>
+</div>
+<!-- 3 Hand-drawn Cards -->
+<div class="grid grid-cols-3 gap-1.5 mt-1">
+<div class="bg-surface-container-lowest/60 rounded p-1.5 border border-outline/20 text-center">
+<div class="w-6 h-6 mx-auto bg-outline/20 rounded-full mb-1"></div>
+<div class="h-1.5 w-full bg-outline/20 rounded mb-1"></div>
+<span class="text-[9px] font-code-sm text-outline">$18.00</span>
+</div>
+<div class="bg-surface-container-lowest/60 rounded p-1.5 border border-outline/20 text-center">
+<div class="w-6 h-6 mx-auto bg-outline/20 rounded-full mb-1"></div>
+<div class="h-1.5 w-full bg-outline/20 rounded mb-1"></div>
+<span class="text-[9px] font-code-sm text-outline">$22.00</span>
+</div>
+<div class="bg-surface-container-lowest/60 rounded p-1.5 border border-outline/20 text-center">
+<div class="w-6 h-6 mx-auto bg-outline/20 rounded-full mb-1"></div>
+<div class="h-1.5 w-full bg-outline/20 rounded mb-1"></div>
+<span class="text-[9px] font-code-sm text-outline">$16.50</span>
+</div>
+</div>
+</div>
+<!-- Pencil annotation notes -->
+<div class="relative z-10 pt-space-xs mt-2 text-[10px] font-code-sm text-secondary bg-secondary-fixed/50 px-2 py-1 rounded inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">edit</span>
+<span>Note: "Make cards 3-col on desktop, stacked on mobile"</span>
+</div>
+</div>
+<!-- Panel Metadata Bottom -->
+<div class="mt-space-sm flex items-center justify-between text-outline font-code-sm text-code-sm">
+<span>Resolution: 1920x1080</span>
+<span class="text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span> Source Captured
+              </span>
+</div>
+</div>
+<!-- PANEL 2: AI Structural Vision Interpretation -->
+<div class="flex flex-col bg-surface-container-low/80 rounded-xl p-space-md shadow-sm relative group overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-code-sm text-code-sm flex items-center justify-center font-bold">2</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Semantic Segmentation</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary bg-primary-fixed/50 px-2 py-0.5 rounded font-medium">Llama 3.2 Vision</span>
+</div>
+<!-- Bounding Box HUD Visualizer -->
+<div class="relative flex-1 min-h-[340px] bg-inverse-surface text-inverse-on-surface rounded-lg p-space-md shadow-inner flex flex-col justify-between font-code-sm overflow-hidden">
+<!-- Grid HUD Overlay -->
+<div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+<!-- Detected Component Boxes -->
+<div class="relative z-10 flex flex-col gap-space-sm">
+<!-- Bounding Box: Nav -->
+<div class="bg-surface-variant/10 rounded p-1.5 relative">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] text-secondary-fixed font-semibold tracking-wide bg-primary/40 px-1 rounded">&lt;NavBar brand="Bean&amp;Roast"&gt;</span>
+<span class="text-[9px] text-outline-variant font-mono">conf: 0.98</span>
+</div>
+<div class="text-[10px] text-inverse-on-surface/60">flex items-center justify-between px-4 h-12</div>
+</div>
+<!-- Bounding Box: Hero Grid -->
+<div class="bg-surface-variant/10 rounded p-1.5 relative">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] text-secondary-fixed font-semibold tracking-wide bg-primary/40 px-1 rounded">&lt;HeroSection layout="split"&gt;</span>
+<span class="text-[9px] text-outline-variant font-mono">conf: 0.95</span>
+</div>
+<div class="text-[10px] text-inverse-on-surface/60">H1: Display + Subheading + &lt;PrimaryButton&gt;</div>
+</div>
+<!-- Bounding Box: Product Cards List -->
+<div class="bg-surface-variant/10 rounded p-1.5 relative">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] text-secondary-fixed font-semibold tracking-wide bg-primary/40 px-1 rounded">&lt;CardGrid cols={3}&gt;</span>
+<span class="text-[9px] text-outline-variant font-mono">conf: 0.99</span>
+</div>
+<div class="grid grid-cols-3 gap-1 text-[9px] text-inverse-on-surface/80 pt-1">
+<span class="bg-inverse-surface/80 px-1 py-0.5 rounded text-center">[Item: $18]</span>
+<span class="bg-inverse-surface/80 px-1 py-0.5 rounded text-center">[Item: $22]</span>
+<span class="bg-inverse-surface/80 px-1 py-0.5 rounded text-center">[Item: $16.5]</span>
+</div>
+</div>
+</div>
+<!-- Loupe Zoom Inspection Badge -->
+<div class="relative z-10 bg-surface-container-highest/20 backdrop-blur-md rounded p-1.5 flex items-center justify-between text-[11px] text-secondary-fixed">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">saved_search</span>
+<span>Extracted Tailwind AST: 28 tokens</span>
+</span>
+<span class="text-surface-tint font-mono">qwen2.5-coder</span>
+</div>
+</div>
+<!-- Panel Metadata Bottom -->
+<div class="mt-space-sm flex items-center justify-between text-outline font-code-sm text-code-sm">
+<span>Confidence Avg: 97.4%</span>
+<span class="text-secondary font-medium">AST Validated</span>
+</div>
+</div>
+<!-- PANEL 3: Polished Generated Live Website Preview -->
+<div class="flex flex-col bg-surface-container-low/80 rounded-xl p-space-md shadow-sm relative group overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-code-sm text-code-sm flex items-center justify-center font-bold">3</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Live Preview</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded font-code-sm text-code-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Active DOM</span>
+</div>
+</div>
+<!-- Browser Simulation Window -->
+<div class="relative flex-1 min-h-[340px] bg-surface-container-lowest rounded-lg shadow-sm flex flex-col justify-between overflow-hidden">
+<!-- Browser Mock Chrome -->
+<div class="bg-surface-container px-space-sm py-1.5 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+<div class="font-code-sm text-[10px] text-on-surface-variant bg-surface-container-lowest px-2 py-0.5 rounded shadow-xs">
+                  localhost:5173/preview
+                </div>
+<span class="material-symbols-outlined text-outline text-[14px]">refresh</span>
+</div>
+<!-- Rendered Mock Café Page -->
+<div class="p-space-sm flex-1 flex flex-col justify-between">
+<!-- Navbar Mock -->
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded bg-primary flex items-center justify-center text-[10px] text-on-primary font-bold">B</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Bean &amp; Roast</span>
+</div>
+<div class="flex items-center gap-2 font-code-sm text-[10px] text-on-surface-variant">
+<span>Menu</span>
+<span>Origin</span>
+<span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded">Cart (2)</span>
+</div>
+</div>
+<!-- Hero Section Mock -->
+<div class="my-2 bg-gradient-to-r from-surface-container-low to-surface-container p-space-sm rounded-lg flex items-center justify-between">
+<div>
+<span class="text-[9px] font-code-sm text-secondary uppercase font-semibold">Single-Origin Roast</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Artisan Ethiopia Guji</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Notes of jasmine, bergamot, and sweet peach blossom.</p>
+<button class="mt-2 px-2.5 py-1 bg-primary text-on-primary rounded text-[11px] font-label-md">Order Beans</button>
+</div>
+<div class="w-14 h-14 bg-surface-container-highest rounded-lg flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px] text-secondary">local_cafe</span>
+</div>
+</div>
+<!-- Product Grid Mock -->
+<div class="grid grid-cols-3 gap-2">
+<div class="p-1.5 bg-surface-container-low rounded text-center">
+<div class="w-full h-8 bg-surface-container-high rounded mb-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-outline">coffee</span>
+</div>
+<div class="text-[10px] font-medium text-on-surface truncate">Guji Natural</div>
+<div class="text-[10px] font-code-sm text-secondary font-bold">$18.00</div>
+</div>
+<div class="p-1.5 bg-surface-container-low rounded text-center">
+<div class="w-full h-8 bg-surface-container-high rounded mb-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-outline">coffee</span>
+</div>
+<div class="text-[10px] font-medium text-on-surface truncate">Geisha Special</div>
+<div class="text-[10px] font-code-sm text-secondary font-bold">$22.00</div>
+</div>
+<div class="p-1.5 bg-surface-container-low rounded text-center">
+<div class="w-full h-8 bg-surface-container-high rounded mb-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-outline">coffee</span>
+</div>
+<div class="text-[10px] font-medium text-on-surface truncate">Dark Espresso</div>
+<div class="text-[10px] font-code-sm text-secondary font-bold">$16.50</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel Metadata Bottom -->
+<div class="mt-space-sm flex items-center justify-between text-outline font-code-sm text-code-sm">
+<span>Code Format: Tailwind CSS</span>
+<a class="text-secondary font-medium hover:underline flex items-center gap-1" data-path="workspace" href="#">
+<span>Open in Editor</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Three Compact Benefit Cards Section -->
+<section class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Benefit 1: Runs Locally -->
+<div class="p-space-lg bg-surface-container-low rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[22px]">memory</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Runs locally</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Full speed execution directly on your Apple Silicon Metal or NVIDIA CUDA GPU via Ollama. No waiting on cloud queues or paying per-token API bills.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container-highest flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-outline">Local GPU/CPU Acceleration</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">0ms Latency Overhead</span>
+</div>
+</div>
+<!-- Benefit 2: Open-Weight Models -->
+<div class="p-space-lg bg-surface-container-low rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Open-weight models</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Powered by transparent, inspectable open-weight architectures: Meta’s Llama 3.2 Vision for layout perception and Qwen 2.5 Coder for semantic HTML output.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container-highest flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-outline">Llama 3.2 + Qwen 2.5</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">100% Hackable</span>
+</div>
+</div>
+<!-- Benefit 3: Sketches Stay on Device -->
+<div class="p-space-lg bg-surface-container-low rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Your sketches stay private</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Zero telemetry. No cloud sync. No model training on your proprietary interface designs, NDA napkin drawings, or confidential client layouts.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container-highest flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-outline">Air-gapped Ready</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">Zero Uploads</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Workflow In Action: Real World Photo Cards -->
+<section class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-xl">
+<div class="flex flex-col md:flex-row items-end justify-between mb-space-lg gap-space-sm">
+<div>
+<span class="font-code-sm text-code-sm text-secondary font-semibold uppercase tracking-wider">Tactile to Digital</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">From physical ink to compiled code</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+        Designed for whiteboards, legal pads, coffee napkins, and Moleskine journals. The vision parser discards paper texture while preserving compositional intent.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="relative rounded-2xl overflow-hidden shadow-sm bg-surface-container-low">
+<img class="w-full h-72 object-cover" data-alt="A warm, tactile photograph of a designer sketching a clean web interface wireframe with a black pen on a dotted grid notebook. Warm natural desk lighting with a cup of black coffee, mechanical pencil, and ruler nearby in soft focus. Elegant studio setting with subtle warm minimalism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM_e1ykNIuNUDlx63qi9ZTdfbjQ5ucvpi8M2qfjiQrax7KOKBHEqnyHnVK8ajoeZrSSNdgkiISu-FNQZAmTXe1i3TSfjbP-qXFfBBFbYcOJCsqF9wB7lWusbYOAmxy0XZcYQuu3iVk_O52-qdi5obRVCxI__2u4Zil59m7z1QiwexuWWGZfk9C8YTFWBJY4z982hwTuhRnLteiuQZ8UmAFLzFymLyCQ0OUwTjKcYh4aYo3BejPgGBQ"/>
+<div class="p-space-lg bg-surface-container-low">
+<span class="font-code-sm text-code-sm text-secondary font-semibold">Stage 01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">Freeform Ideation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Don't get bogged down in Figma auto-layouts or CSS flexbox alignments during the brainstorm. Just sketch boxes, buttons, text hierachies, and labels.
+          </p>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden shadow-sm bg-surface-container-low">
+<img class="w-full h-72 object-cover" data-alt="A modern laptop on a light wooden desk displaying a split-screen code editor and live rendered web interface preview. Next to the laptop sits the original napkin sketch propped against a cup. Diffused architectural daylight with clean shadows and calm workspace aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZc5KpBqHVFHfN9W8C2NlmHAQKepcV_zl1ddklzJoPbLQvtzjfNK3xXSFj2Aiu1_vo-K5agKXPiwNUkUQxgnNyhU39AF6RVWsjPDSViK3oepZuJXgcqt4v1rjKud95_AUENd3hJcYiVFyWbKEcnMg_NbfU9-DYZwWvcO_1v--crO33jJlgQg70k6dEYt_JbVgD_BVbzLfpa02_znihv2Sx6BEt-66quxdDb2KyvWBFbSDALDjozSgp"/>
+<div class="p-space-lg bg-surface-container-low">
+<span class="font-code-sm text-code-sm text-secondary font-semibold">Stage 02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">Instant Local Synthesis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Hold your sketch up to the webcam or snap a mobile photo. The local inference engine transforms the raster input into a clean, editable Tailwind DOM tree in seconds.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Four-Step Interactive / Visual Explanation Section -->
+<section class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-2xl" id="how-it-works">
+<div class="text-center max-w-3xl mx-auto mb-space-2xl">
+<span class="font-code-sm text-code-sm text-secondary font-semibold uppercase tracking-wider">How it works</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-space-xs">
+        Four steps from paper to production
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm">
+        Everything runs locally on your machine. No cloud subscriptions, no API keys, and no risk of leaking early-stage IP.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Step 1: Sketch -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface font-code-sm text-code-sm flex items-center justify-center font-bold">01</span>
+<span class="material-symbols-outlined text-outline text-[22px]">draw</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">1. Sketch</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Draw your wireframe layout on any physical notebook, napkin, index card, or whiteboard using a pen, marker, or pencil.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm border-t border-surface-container">
+<span class="font-code-sm text-code-sm text-outline">Input: Any paper surface</span>
+</div>
+</div>
+<!-- Step 2: Scan -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface font-code-sm text-code-sm flex items-center justify-center font-bold">02</span>
+<span class="material-symbols-outlined text-outline text-[22px]">center_focus_strong</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">2. Scan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Capture with your laptop webcam directly in the browser or drop a snapshot taken on your phone. Perspective warp is auto-corrected.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm border-t border-surface-container">
+<span class="font-code-sm text-code-sm text-outline">Webcam or Image dropzone</span>
+</div>
+</div>
+<!-- Step 3: Generate -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container font-code-sm text-code-sm flex items-center justify-center font-bold">03</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">code_blocks</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">3. Generate</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Local open-weight vision &amp; coding models parse UI semantics and stream clean, accessible HTML, Tailwind CSS, or React components.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm border-t border-surface-container">
+<span class="font-code-sm text-code-sm text-secondary font-medium">Llama 3.2-Vision Stream</span>
+</div>
+</div>
+<!-- Step 4: Refine -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface font-code-sm text-code-sm flex items-center justify-center font-bold">04</span>
+<span class="material-symbols-outlined text-outline text-[22px]">cached</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">4. Refine</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Iterate directly in the built-in live code dock, or scribble changes on your physical paper and rescan to patch existing UI sections.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm border-t border-surface-container">
+<span class="font-code-sm text-code-sm text-outline">Paper patch &amp; Rescan</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Deep Feature Matrix Grid -->
+<section class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-xl" id="features">
+<div class="mb-space-xl">
+<span class="font-code-sm text-code-sm text-secondary font-semibold uppercase tracking-wider">Features</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-space-xs">
+        Engineered for developer velocity
+      </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Feature 1: Paper-based Edits -->
+<div class="p-space-lg bg-surface-container-low rounded-2xl flex flex-col md:flex-row gap-space-md items-start">
+<div class="p-3 rounded-xl bg-surface-container-lowest shadow-sm text-secondary">
+<span class="material-symbols-outlined text-[26px]">history_edu</span>
+</div>
+<div class="space-y-space-xs flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Paper-based edits &amp; visual diffs</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Need to swap a CTA, insert a customer review row, or adjust column span? Cross it out or draw an arrow on your notebook. Napkin2Code computes a semantic AST diff and patches the code without re-generating from scratch.
+          </p>
+<div class="pt-space-xs flex items-center gap-space-sm font-code-sm text-code-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Semantic AST Diffing Engine</span>
+</div>
+</div>
+</div>
+<!-- Feature 2: Multi-device Live Preview -->
+<div class="p-space-lg bg-surface-container-low rounded-2xl flex flex-col md:flex-row gap-space-md items-start">
+<div class="p-3 rounded-xl bg-surface-container-lowest shadow-sm text-secondary">
+<span class="material-symbols-outlined text-[26px]">devices</span>
+</div>
+<div class="space-y-space-xs flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Multi-device viewport toggling</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Test responsive breakpoints right inside the canvas. Switch between 1440px desktop, 768px tablet, and 375px mobile views with zero refresh latency. Built with hot-reloading iframe sandboxing.
+          </p>
+<div class="pt-space-xs flex items-center gap-space-sm font-code-sm text-code-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Desktop, Tablet &amp; Mobile Breakpoints</span>
+</div>
+</div>
+</div>
+<!-- Feature 3: Clean Editable Code -->
+<div class="p-space-lg bg-surface-container-low rounded-2xl flex flex-col md:flex-row gap-space-md items-start">
+<div class="p-3 rounded-xl bg-surface-container-lowest shadow-sm text-secondary">
+<span class="material-symbols-outlined text-[26px]">integration_instructions</span>
+</div>
+<div class="space-y-space-xs flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Clean, human-readable code</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            No weird machine-generated nested `&lt;div&gt;` soup. The output adheres to strict semantic web standards: proper `</p><nav>`, `<main>`, `<section>`, and `<article>` tags with standard Tailwind utility classes.
+          </article></section></main></nav><p></p>
+<div class="pt-space-xs flex items-center gap-space-sm font-code-sm text-code-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Semantic HTML5 + Tailwind v3/v4</span>
+</div>
+</div>
+</div>
+<!-- Feature 4: One-Click Project Export -->
+<div class="p-space-lg bg-surface-container-low rounded-2xl flex flex-col md:flex-row gap-space-md items-start">
+<div class="p-3 rounded-xl bg-surface-container-lowest shadow-sm text-secondary">
+<span class="material-symbols-outlined text-[26px]">folder_zip</span>
+</div>
+<div class="space-y-space-xs flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">One-click project export</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Copy single components directly to your clipboard or download a full standalone Vite + Tailwind ZIP bundle ready for `npm install` and immediate deployment on your own servers or static hosting.
+          </p>
+<div class="pt-space-xs flex items-center gap-space-sm font-code-sm text-code-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Download .ZIP or Copy to Clipboard</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Local Setup Callout Box Section -->
+<section class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-xl" id="local-setup">
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl shadow-sm border border-surface-container-highest">
+<div class="flex flex-col lg:flex-row gap-space-xl items-start lg:items-center justify-between">
+<!-- Left Explainer -->
+<div class="max-w-xl space-y-space-sm">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-code-sm text-code-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span>Two-Minute Quickstart</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">
+            Get up and running with Ollama
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Napkin2Code plugs directly into your local Ollama installation. Once the vision model weights are downloaded to your disk, you are completely offline-ready. Generation speed scales directly with your GPU hardware.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs font-code-sm text-code-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">bolt</span>
+<span>Metal &amp; CUDA Ready</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">wifi_off</span>
+<span>100% Offline Capable</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">lock_reset</span>
+<span>Zero Cloud Reliance</span>
+</div>
+</div>
+</div>
+<!-- Right Terminal Mockup -->
+<div class="w-full lg:w-[480px] bg-inverse-surface rounded-xl shadow-md overflow-hidden text-inverse-on-surface font-code-sm">
+<!-- Terminal Titlebar -->
+<div class="px-space-md py-2.5 bg-inverse-surface/80 border-b border-surface-container-highest/20 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<span class="text-[11px] text-outline-variant font-mono">bash ~ local setup</span>
+<span class="text-[10px] text-outline-variant">OLLAMA_HOST=127.0.0.1</span>
+</div>
+<!-- Terminal Content -->
+<div class="p-space-md space-y-3 text-body-sm font-code-md">
+<div>
+<span class="text-outline-variant"># 1. Install Ollama engine</span>
+<div class="flex items-center justify-between mt-1 text-surface-bright">
+<code>curl -fsSL https://ollama.ai/install.sh | sh</code>
+<button class="text-outline-variant hover:text-surface-bright transition-colors" onclick="navigator.clipboard.writeText('curl -fsSL https://ollama.ai/install.sh | sh')" title="Copy">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<div>
+<span class="text-outline-variant"># 2. Pull vision &amp; coding models</span>
+<div class="flex items-center justify-between mt-1 text-surface-bright">
+<code>ollama run llama3.2-vision</code>
+<button class="text-outline-variant hover:text-surface-bright transition-colors" onclick="navigator.clipboard.writeText('ollama run llama3.2-vision')" title="Copy">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<div>
+<span class="text-outline-variant"># 3. Launch Napkin2Code</span>
+<div class="flex items-center justify-between mt-1 text-secondary-fixed">
+<code>npx napkin2code dev</code>
+<button class="text-outline-variant hover:text-surface-bright transition-colors" onclick="navigator.clipboard.writeText('npx napkin2code dev')" title="Copy">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<div class="pt-2 text-[11px] text-surface-tint border-t border-surface-container-highest/10 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>Local server listening at http://localhost:5173</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Open Source Banner CTA -->
+<section class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-xl">
+<div class="bg-gradient-to-r from-surface-container-high to-surface-container rounded-2xl p-space-lg md:p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-sm">
+<div class="space-y-space-xs text-center md:text-left">
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">
+          Zero pricing. Zero subscriptions. Fully open source.
+        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+          No sign-in walls, no trial limits, no credit card prompts. Grab a pen and a napkin, clone the repo, and start turning physical sketches into real web apps today.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-md">
+<a class="px-space-lg py-space-sm bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary font-label-md text-label-md rounded-lg shadow-md transition-all" data-path="workspace" href="#">
+          Launch Workspace
+        </a>
+<a class="px-space-md py-space-sm bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-md text-label-md rounded-lg shadow-sm transition-all inline-flex items-center gap-1.5" href="https://github.com" target="_blank">
+<span class="material-symbols-outlined text-[18px]">code</span>
+<span>View GitHub</span>
+</a>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low mt-space-2xl py-space-xl shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col gap-space-xs text-center md:text-left"><p class="font-body-sm text-body-sm text-on-surface-variant">Built for the MLH Open Source AI Hackathon · Hacktoberfest Hack Day, Pune</p><p class="font-code-sm text-code-sm text-outline">Open Source Software · MIT Licensed</p></div><div class="flex items-center gap-space-sm bg-surface-container-highest px-space-md py-space-xs rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-code-sm text-code-sm text-on-surface-variant font-medium">100% Local Inference · No cloud upload</span></div></div></footer></body></html>

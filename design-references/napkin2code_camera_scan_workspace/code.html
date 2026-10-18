@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-highest":"#e3e2e4","on-primary-fixed":"#0f0069","error":"#ba1a1a","on-primary-container":"#dad7ff","on-tertiary":"#ffffff","surface-container":"#efedf0","outline-variant":"#c7c4d8","surface-tint":"#4d44e3","secondary-fixed-dim":"#c3c0ff","background":"#faf9fb","inverse-surface":"#2f3032","on-background":"#1b1c1e","surface-container-low":"#f5f3f5","on-error":"#ffffff","tertiary":"#434853","tertiary-fixed-dim":"#c2c6d3","inverse-on-surface":"#f2f0f3","on-primary":"#ffffff","on-secondary":"#ffffff","inverse-primary":"#c3c0ff","on-primary-fixed-variant":"#3323cc","on-error-container":"#93000a","surface-container-lowest":"#ffffff","secondary-fixed":"#e3dfff","primary-container":"#4f46e5","on-surface":"#1b1c1e","surface":"#faf9fb","on-tertiary-fixed-variant":"#424751","on-secondary-container":"#fffbff","surface-container-high":"#e9e8ea","secondary-container":"#6860ef","surface-dim":"#dbd9dc","on-secondary-fixed":"#100069","secondary":"#4e45d5","tertiary-container":"#5b606b","on-secondary-fixed-variant":"#372abf","tertiary-fixed":"#dee2ef","on-surface-variant":"#464555","primary-fixed":"#e2dfff","outline":"#777587","surface-bright":"#faf9fb","on-tertiary-fixed":"#171c25","primary":"#3525cd","surface-variant":"#e3e2e4","error-container":"#ffdad6","primary-fixed-dim":"#c3c0ff","on-tertiary-container":"#d7dbe8"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem",margin:"1.25rem","space-xs":"0.25rem","space-md":"1rem",gutter:"1rem","gutter-lg":"2rem","space-lg":"1.5rem","gutter-md":"1.5rem","space-xl":"2rem","margin-lg":"3rem","margin-md":"2rem","space-2xl":"3rem"},fontFamily:{"label-md":["Inter"],"code-lg":["JetBrains Mono"],"code-sm":["JetBrains Mono"],"body-sm":["Inter"],"headline-md":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"display-lg-mobile":["Inter"],"headline-lg":["Inter"],"code-md":["JetBrains Mono"],"label-sm":["JetBrains Mono"],"display-lg":["Inter"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"500"}],"code-lg":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["22px",{lineHeight:"30px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"21px",letterSpacing:"0em",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"-0.01em",fontWeight:"500"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"600"}],"code-md":["13px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"500"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.025em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.03)] z-50 flex flex-col justify-between p-space-md"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm px-space-xs"><img alt="Napkin2Code Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wyq4KR_yRXAyDLU49urAqsCHZVeDqG7vLKd7AQJY6Bd0IZDqox1dqe44m3Z1OTmWP7LRrYT3GUmR0U61tTdGwXgFQA1mluQYd0TxhnY-fKkb2BTxLILppMign2ANNJRA0bl0PuY9aBJtG-JWF7_9vYlAtwHaGTRtT9DxL0Cu3G9i3uzSQ6wJlQis5Eeq95UG7cxvOtr6f7lUnW9QTXLO8Q1FQxqPFKJYQyMuWENIPB9jJ8NWTfxzUSEwE"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Napkin2Code</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="projects" href="#"><span class="material-symbols-outlined text-[20px]">folder_open</span><span>Projects</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="scan-sketch" href="#"><span class="material-symbols-outlined text-[20px]">draw</span><span>Scan sketch</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="local-models" href="#"><span class="material-symbols-outlined text-[20px]">memory</span><span>Local models</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings</span></a></nav></div><div class="flex flex-col gap-space-sm bg-surface-container-lowest p-space-sm rounded-xl shadow-[0_1px_3px_rgba(28,29,31,0.04)]"><div class="flex items-center justify-between"><span class="font-code-sm text-code-sm text-outline font-medium">Ollama 127.0.0.1:11434</span><span class="w-2 h-2 rounded-full bg-secondary"></span></div><div class="font-code-sm text-code-sm text-on-surface-variant font-medium leading-tight">Connected: llama3.2-vision &amp; qwen2.5-coder</div><div class="flex items-center gap-1.5 pt-space-xs text-outline"><span class="material-symbols-outlined text-[14px]">lock</span><span class="font-label-sm text-label-sm">Air-gapped · Local only</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-sm"><span class="font-code-md text-code-md text-on-surface-variant">workspace / sandbox</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-code-sm text-code-sm text-on-surface-variant">Ollama Ready</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full min-h-screen bg-background"><div class="flex flex-col w-full">
+<!-- Top Workspace Context & Pipeline Indicator Bar -->
+<div class="w-full bg-surface-container-low px-space-lg py-space-md shadow-sm">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Project Context & Step Indicator -->
+<div class="flex flex-wrap items-center gap-space-lg">
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-1.5 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">coffee</span>
+<span class="font-label-md text-label-md text-outline">Project:</span>
+<input class="bg-transparent font-headline-sm text-headline-sm text-on-surface font-semibold focus:outline-none focus:text-primary max-w-[240px] truncate" title="Edit project name" type="text" value="Artisan Coffee Roasters"/>
+<span class="material-symbols-outlined text-outline text-[16px]">edit</span>
+</div>
+<!-- 3-Step Breadcrumb Flow -->
+<div class="flex items-center gap-space-xs font-label-md text-label-md">
+<div class="flex items-center gap-2 bg-primary-container text-on-primary-container px-3 py-1 rounded-full shadow-sm font-semibold">
+<span class="w-4 h-4 rounded-full bg-surface-container-lowest text-primary text-[10px] flex items-center justify-center font-bold">1</span>
+<span>1. Scan Sketch</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[16px]">arrow_forward</span>
+<div class="flex items-center gap-2 bg-surface-container text-on-surface-variant px-3 py-1 rounded-full">
+<span class="w-4 h-4 rounded-full bg-surface-container-highest text-outline text-[10px] flex items-center justify-center">2</span>
+<span>2. Review Interpretation</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[16px]">arrow_forward</span>
+<div class="flex items-center gap-2 bg-surface-container text-on-surface-variant px-3 py-1 rounded-full opacity-60">
+<span class="w-4 h-4 rounded-full bg-surface-container-highest text-outline text-[10px] flex items-center justify-center">3</span>
+<span>3. Code &amp; Preview</span>
+</div>
+</div>
+</div>
+<!-- Air-Gapped Privacy Assurance Pill -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-1.5 rounded-full shadow-sm self-start xl:self-auto">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<span class="material-symbols-outlined text-secondary text-[16px]">security</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium">100% On-Device · Camera frame stays in browser memory until analyzed by local Ollama</span>
+</div>
+</div>
+</div>
+<!-- Main Viewport Canvas (65% / 35% Split Layout) -->
+<div class="w-full p-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- LEFT PANEL: Large Camera Viewfinder (65% on desktop) -->
+<section class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Interactive State Testing Tabs (Subtle Switcher) -->
+<div class="flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-xs bg-surface-container p-1 rounded-lg">
+<button class="px-space-sm py-1 rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all" id="btn-state-live">
+              Live Camera
+            </button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="btn-state-perm">
+              Permission Prompt
+            </button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="btn-state-review">
+              Captured Frame
+            </button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="btn-state-analyzing">
+              Analyzing
+            </button>
+</div>
+<div class="flex items-center gap-1.5 text-outline">
+<span class="material-symbols-outlined text-[16px]">videocam</span>
+<span class="font-code-sm text-code-sm">Stream Active · 30 FPS</span>
+</div>
+</div>
+<!-- The Camera Viewfinder Container -->
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-inverse-surface shadow-xl flex flex-col justify-between group">
+<!-- Background Camera Feed Simulator Image -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-500 scale-[1.01]" data-alt="Top down overhead photo of a creator wooden drafting studio desk with an open grid notebook containing clear hand drawn UI wireframe layouts for a coffee roasting company website with handwritten typography, a ballpoint pen, an espresso cup, and natural warm window sidelighting." id="viewport-feed" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8gUDLOQ0CpaBl9wXwkobaGyqiTuoRVk0_DACVqFP9oMVx2Bi-PoMBg4DNifRZbNe9PhIfFxmOFdmgjRyNTHmOhFxWiMyepnUUV_ci1IALmrgxlbXcAXZ-9a-XrThAOUXYVPh-R9hTCgEQK3EqZoi3hqvunF43H9oZiQ0s6yNtiGZ79SHK6eHE6voGsndMntD4Cyr0eQJT9Y1qDDIrMuR8RxHydGuJgzosWtjixetb4Q4lsSHRmsnf')">
+</div>
+<!-- Subtle Dark Scrim Overlays for Reticle Contrast -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-inverse-surface/60 pointer-events-none"></div>
+<!-- TOP VIEWPORT OVERLAY HEADER -->
+<div class="relative z-10 flex items-center justify-between p-space-md">
+<div class="flex items-center gap-space-xs bg-inverse-surface/85 backdrop-blur-md px-3 py-1.5 rounded-lg text-inverse-on-surface shadow-sm">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-code-sm text-code-sm font-medium">Live preview — capture a frame to analyze</span>
+</div>
+<!-- Realtime Alignment Feedback Badge -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm" id="alignment-pill">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Good lighting detected · Paper flat inside guide</span>
+</div>
+</div>
+<!-- OPTICAL RETICLE & PAPER GUIDES -->
+<div class="relative z-10 w-full flex-1 flex items-center justify-center p-space-xl pointer-events-none">
+<!-- A4/Letter Aspect Ratio Guide Target Frame -->
+<div class="relative w-full max-w-[480px] aspect-[1/1.38] rounded-xl flex items-center justify-center transition-all duration-300">
+<!-- Subtle dashed paper frame guide simulated by dots -->
+<div class="absolute inset-0 rounded-xl bg-transparent shadow-[inset_0_0_0_1px_rgba(255,255,255,0.35)]"></div>
+<!-- Glowing Corner Precision L-Brackets (Corner Markers) -->
+<div class="absolute -top-1 -left-1 w-6 h-6 border-t-2 border-l-2 border-secondary-fixed rounded-tl-sm shadow-[0_0_8px_rgba(79,70,229,0.8)]"></div>
+<div class="absolute -top-1 -right-1 w-6 h-6 border-t-2 border-r-2 border-secondary-fixed rounded-tr-sm shadow-[0_0_8px_rgba(79,70,229,0.8)]"></div>
+<div class="absolute -bottom-1 -left-1 w-6 h-6 border-b-2 border-l-2 border-secondary-fixed rounded-bl-sm shadow-[0_0_8px_rgba(79,70,229,0.8)]"></div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 border-b-2 border-r-2 border-secondary-fixed rounded-br-sm shadow-[0_0_8px_rgba(79,70,229,0.8)]"></div>
+<!-- Center Alignment Crosshair -->
+<div class="w-8 h-8 relative opacity-60">
+<div class="absolute top-1/2 left-0 right-0 h-px bg-white/70 -translate-y-1/2"></div>
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-white/70 -translate-x-1/2"></div>
+</div>
+<!-- Sketch Loupe Optical Callout Tag -->
+<div class="absolute bottom-4 right-4 bg-inverse-surface/90 backdrop-blur-md px-2.5 py-1 rounded-md text-inverse-on-surface shadow-md">
+<span class="font-code-sm text-code-sm text-secondary-fixed">FOV: 84° · OCR Active</span>
+</div>
+</div>
+</div>
+<!-- ALTERNATE STATE OVERLAYS (Simulated Dynamic Switchers) -->
+<!-- State Overlay: Permission Prompt (Hidden by default) -->
+<div class="absolute inset-0 z-20 bg-inverse-surface/95 backdrop-blur-xl hidden flex-col items-center justify-center p-space-xl text-center" id="state-permission-view">
+<div class="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center mb-space-md text-primary">
+<span class="material-symbols-outlined text-[36px]">videocam_off</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-inverse-on-surface mb-space-xs font-semibold">Enable Camera Access</h3>
+<p class="font-body-md text-body-md text-outline-variant max-w-md mb-space-lg">
+              Napkin2Code scans your physical paper sketches right inside your browser. No video is ever transmitted to cloud servers.
+            </p>
+<div class="flex gap-space-sm">
+<button class="px-space-lg py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-secondary transition-all shadow-md" onclick="switchView('live')">
+                Allow Camera Access
+              </button>
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-medium" onclick="switchView('live')">
+                Choose Photo Instead
+              </button>
+</div>
+</div>
+<!-- State Overlay: Captured Frame Review (Hidden by default) -->
+<div class="absolute inset-0 z-20 bg-inverse-surface/70 backdrop-blur-sm hidden flex-col items-center justify-between p-space-lg" id="state-review-view">
+<div class="w-full flex items-center justify-between">
+<div class="bg-secondary text-on-secondary px-3 py-1 rounded-full font-code-sm text-code-sm flex items-center gap-1.5 font-medium shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Frame Frozen (1080p Raw Bitmap)</span>
+</div>
+<button class="bg-surface-container-lowest/90 px-3 py-1 rounded-lg text-on-surface font-label-md text-label-md flex items-center gap-1 hover:bg-surface-container-high transition-all" onclick="switchView('live')">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+<span>Retake</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest/95 backdrop-blur-md p-space-md rounded-xl max-w-md shadow-2xl text-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold block mb-1">Frame Captured Successfully</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Paper corners detected with 98.4% alignment score. Ready for local llama3.2-vision inference.</p>
+<button class="w-full py-2.5 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm font-medium shadow-md hover:bg-secondary transition-all" onclick="switchView('analyzing')">
+                Proceed with this frame
+              </button>
+</div>
+<div></div>
+</div>
+<!-- State Overlay: Analyzing in Progress (Hidden by default) -->
+<div class="absolute inset-0 z-20 bg-surface-container-lowest/90 backdrop-blur-xl hidden flex-col items-center justify-center p-space-xl text-center" id="state-analyzing-view">
+<div class="relative w-20 h-20 mb-space-lg">
+<div class="absolute inset-0 rounded-full bg-primary/20 animate-ping"></div>
+<div class="w-20 h-20 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[36px] animate-spin">sync</span>
+</div>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-bold mb-1">Analyzing Sketch with Local Ollama</span>
+<span class="font-code-md text-code-md text-primary font-medium mb-space-sm">Running model: llama3.2-vision:11b</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Extracting wireframe layout containers, handwritten buttons, and typography hierarchy...</p>
+<div class="w-64 h-2 bg-surface-container-high rounded-full overflow-hidden mt-space-md">
+<div class="w-2/3 h-full bg-primary rounded-full animate-pulse"></div>
+</div>
+</div>
+<!-- FLOATING FROSTED-GLASS BOTTOM CAMERA CONTROLS TOOLBAR -->
+<div class="relative z-10 w-full p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm bg-inverse-surface/80 backdrop-blur-xl rounded-b-2xl">
+<!-- Left Controls: Camera & Resolution Dropdowns -->
+<div class="flex items-center gap-space-xs w-full sm:w-auto justify-between sm:justify-start">
+<!-- Source Dropdown -->
+<div class="flex items-center gap-1.5 bg-inverse-surface px-2.5 py-1.5 rounded-lg text-inverse-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">videocam</span>
+<select class="bg-transparent font-code-sm text-code-sm text-inverse-on-surface focus:outline-none cursor-pointer">
+<option class="text-on-surface">FaceTime HD Camera (Built-in)</option>
+<option class="text-on-surface">OBS Virtual Camera</option>
+<option class="text-on-surface">External 4K Capture Card</option>
+</select>
+</div>
+<!-- Resolution Pill -->
+<div class="flex items-center gap-1 bg-surface-container-highest/20 px-2 py-1.5 rounded-lg text-inverse-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline-variant">hd</span>
+<span class="font-code-sm text-code-sm font-medium">1080p</span>
+</div>
+</div>
+<!-- Central Capture Shutter Button -->
+<div class="flex items-center gap-space-md">
+<button class="group flex items-center gap-space-sm px-space-lg py-2.5 rounded-full bg-primary hover:bg-secondary text-on-primary shadow-lg hover:shadow-indigo-500/25 transition-all transform active:scale-95" id="shutter-trigger" onclick="captureShutter()" title="Press Spacebar to capture">
+<div class="w-7 h-7 rounded-full bg-on-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight">Capture Sketch</span>
+<span class="bg-on-primary/20 text-on-primary font-code-sm text-code-sm px-1.5 py-0.5 rounded font-mono ml-1">Space</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-inverse-surface text-inverse-on-surface hover:bg-surface-container-highest/30 flex items-center justify-center transition-all" onclick="switchView('live')" title="Refresh Camera Stream">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+<!-- Right Controls: Secondary Upload Anchor -->
+<label class="cursor-pointer flex items-center gap-1.5 text-inverse-on-surface hover:text-white transition-all text-right font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">upload_file</span>
+<span>Upload file</span>
+<input accept="image/png, image/jpeg, image/heic" class="hidden" onchange="switchView('review')" type="file"/>
+</label>
+</div>
+</div>
+<!-- Alternative Drag-and-Drop Ingestion Zone -->
+<div class="w-full p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-md group hover:bg-surface-container-low transition-all">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-all">
+<span class="material-symbols-outlined text-[28px]">cloud_upload</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold block">Prefer uploading a scan or high-res photo?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Drag and drop PNG, JPG, or HEIC napkins here · Up to 50MB</span>
+</div>
+</div>
+<label class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold cursor-pointer hover:bg-surface-container-high transition-all shrink-0">
+            Select file
+            <input accept="image/*" class="hidden" onchange="switchView('review')" type="file"/>
+</label>
+</div>
+</section>
+<!-- RIGHT PANEL: Guidance, Model Config & Intent Prompt (35% on desktop) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Capture Guidance Card -->
+<div class="w-full bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[24px]">tips_and_updates</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Capture guidance</h2>
+</div>
+<span class="font-code-sm text-code-sm bg-surface-container px-2 py-0.5 rounded text-outline">v2.4 Tips</span>
+</div>
+<!-- Sequential 3-Step Practical Instructions -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container text-label-md flex items-center justify-center font-bold shrink-0 mt-0.5">1</span>
+<div>
+<span class="font-body-md text-body-md text-on-surface font-medium block">Place sketch inside frame</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Align the 4 corners of your paper or napkin within the bracket guides.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant text-label-md flex items-center justify-center font-bold shrink-0 mt-0.5">2</span>
+<div>
+<span class="font-body-md text-body-md text-on-surface font-medium block">Ensure even lighting</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Minimize phone shadows or harsh spotlights directly above pen strokes.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant text-label-md flex items-center justify-center font-bold shrink-0 mt-0.5">3</span>
+<div>
+<span class="font-body-md text-body-md text-on-surface font-medium block">Write readable labels</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Label buttons (“CTA”, “Buy Now”) and containers (“Hero Card”) clearly in dark ink.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Intent & Local AI Prompt Configuration -->
+<div class="w-full bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Project Intent &amp; Style</h3>
+<span class="material-symbols-outlined text-outline text-[20px]">psychology</span>
+</div>
+<!-- Project Title Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Project Name</label>
+<div class="flex items-center gap-space-xs bg-surface-container-low px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[18px]">folder</span>
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none" placeholder="e.g. Acme SaaS Dashboard" type="text" value="Artisan Coffee Roasters"/>
+</div>
+</div>
+<!-- Target Framework Selector -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Output Target</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold" type="button">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span>Tailwind + HTML</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>React JSX</span>
+</button>
+</div>
+</div>
+<!-- AI Model Directives / Intent Textarea -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-medium">Model Directives (Optional)</label>
+<span class="font-code-sm text-code-sm text-outline">Prompt injection</span>
+</div>
+<textarea class="w-full bg-surface-container-low p-space-sm rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none resize-none leading-relaxed" placeholder="e.g., Make this a responsive landing page with warm amber buttons, hero coffee beans illustration, and clean cards..." rows="3">Make this a responsive artisan coffee shop landing page with espresso tones, clean rounded cards, and prominent newsletter CTA.</textarea>
+</div>
+<!-- Vision Model Connection Indicator Tile -->
+<div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Vision Analyzer</span>
+<span class="font-code-sm text-code-sm text-primary font-medium">llama3.2-vision:11b</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-secondary font-code-sm text-code-sm font-semibold">
+              Local VRAM Ready
+            </span>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full py-3 rounded-xl bg-primary hover:bg-secondary text-on-primary font-headline-sm text-headline-sm font-semibold shadow-md hover:shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 group" onclick="switchView('analyzing')">
+<span>Analyze sketch</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<a class="w-full py-2.5 rounded-xl text-center text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" data-path="projects" href="#">
+              Cancel / Back to projects
+            </a>
+</div>
+</div>
+<!-- Sketch Media Presets / Tips for Tricky Paper Types -->
+<div class="w-full bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md text-outline font-semibold uppercase tracking-wider">Tips by Medium</span>
+<div class="grid grid-cols-3 gap-space-xs">
+<div class="bg-surface-container-low p-2 rounded-lg text-center flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-outline text-[20px]">lunch_dining</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Folded Napkin</span>
+<span class="font-code-sm text-code-sm text-outline-variant">Flatten creases</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[20px]">edit</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Dark Ink</span>
+<span class="font-code-sm text-code-sm text-secondary">Optimal OCR</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-outline text-[20px]">brush</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Light Pencil</span>
+<span class="font-code-sm text-code-sm text-outline-variant">Boost light</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<script>
+  // Simple state demonstration switcher
+  const stateLiveBtn = document.getElementById('btn-state-live');
+  const statePermBtn = document.getElementById('btn-state-perm');
+  const stateReviewBtn = document.getElementById('btn-state-review');
+  const stateAnalyzingBtn = document.getElementById('btn-state-analyzing');
+
+  const permView = document.getElementById('state-permission-view');
+  const reviewView = document.getElementById('state-review-view');
+  const analyzingView = document.getElementById('state-analyzing-view');
+  const alignmentPill = document.getElementById('alignment-pill');
+
+  const allViews = [permView, reviewView, analyzingView];
+  const allBtns = [stateLiveBtn, statePermBtn, stateReviewBtn, stateAnalyzingBtn];
+
+  function resetButtonStyles() {
+    allBtns.forEach(btn => {
+      btn.className = "px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all";
+    });
+  }
+
+  function switchView(mode) {
+    allViews.forEach(v => v.classList.add('hidden'));
+    resetButtonStyles();
+
+    if (mode === 'live') {
+      stateLiveBtn.className = "px-space-sm py-1 rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all";
+      alignmentPill.classList.remove('opacity-0');
+    } else if (mode === 'permission') {
+      permView.classList.remove('hidden');
+      statePermBtn.className = "px-space-sm py-1 rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all";
+      alignmentPill.classList.add('opacity-0');
+    } else if (mode === 'review') {
+      reviewView.classList.remove('hidden');
+      stateReviewBtn.className = "px-space-sm py-1 rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all";
+      alignmentPill.classList.add('opacity-0');
+    } else if (mode === 'analyzing') {
+      analyzingView.classList.remove('hidden');
+      stateAnalyzingBtn.className = "px-space-sm py-1 rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all";
+      alignmentPill.classList.add('opacity-0');
+    }
+  }
+
+  stateLiveBtn.addEventListener('click', () => switchView('live'));
+  statePermBtn.addEventListener('click', () => switchView('permission'));
+  stateReviewBtn.addEventListener('click', () => switchView('review'));
+  stateAnalyzingBtn.addEventListener('click', () => switchView('analyzing'));
+
+  function captureShutter() {
+    // Provide a subtle camera flash visual feedback
+    const feed = document.getElementById('viewport-feed');
+    feed.classList.add('opacity-40');
+    setTimeout(() => {
+      feed.classList.remove('opacity-40');
+      switchView('review');
+    }, 200);
+  }
+
+  // Keyboard shortcut listener for spacebar
+  window.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      captureShutter();
+    }
+  });
+</script></main></div></body></html>
