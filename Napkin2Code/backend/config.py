@@ -29,7 +29,7 @@ def api_key():
 def current_model():
     global GEMINI_MODEL
     candidates = [MODEL_FILE]
-    if os.getenv("VERCEL"):
+    if os.getenv("VERCEL") or not os.access(BASE_DIR, os.W_OK):
         import tempfile
         candidates.append(Path(tempfile.gettempdir()) / ".model.json")
     for target in candidates:
