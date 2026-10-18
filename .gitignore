@@ -10,3 +10,4 @@ output/
 *.log
 .browser-test/
 .model.tmp
+/Napkin2Code-source.zip
