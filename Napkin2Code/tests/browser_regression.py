@@ -1,0 +1,140 @@
+"""Headless regression checks in a disposable browser context.
+The port-5001 fixture server mocks AI; these tests do not establish model quality.
+"""
+from pathlib import Path
+import json
+from playwright.sync_api import sync_playwright, expect
+
+ROOT=Path(__file__).resolve().parents[1]
+OUT=ROOT/"output"/"browser"
+OUT.mkdir(parents=True,exist_ok=True)
+results=[]
+def passed(name):
+    results.append({"test":name,"status":"pass"})
+    print("PASS:",name,flush=True)
+
+def main():
+    with sync_playwright() as p:
+        browser=p.chromium.launch(channel="chrome",headless=True,args=["--use-fake-ui-for-media-stream","--use-fake-device-for-media-stream"])
+        context=browser.new_context(viewport={"width":1440,"height":1000},permissions=["camera","clipboard-read","clipboard-write"],accept_downloads=True)
+        page=context.new_page()
+        errors=[]
+        page.on("pageerror",lambda err:errors.append(str(err)))
+        base="http://127.0.0.1:5001"
+        page.goto(base+"/scan?sample=1")
+        expect(page.locator("#capture-image")).to_be_visible()
+        expect(page.locator("#analyze-sketch")).to_be_enabled()
+        assert page.locator("nav").count()==1
+        assert page.locator("nav a").all_text_contents()==[" Projects"," Scan sketch"," AI setup"," Settings"," How it works"] or [s.strip() for s in page.locator("nav a").all_text_contents()]==["Projects","Scan sketch","AI setup","Settings","How it works"]
+        passed("one navigation bar with all five requested links; sample loaded")
+        page.locator("#analyze-sketch").click()
+        page.wait_for_url("**/review")
+        expect(page.locator("#outline-title")).to_have_value("Simple login page")
+        page.get_by_role("tab",name="JSON",exact=True).click()
+        original=page.locator("#spec-json").input_value()
+        page.locator("#spec-json").fill("{bad}")
+        page.locator("#generate-website").click()
+        expect(page.locator("#page-error")).to_contain_text("JSON has a syntax error")
+        page.locator("#spec-json").fill(original)
+        page.locator("#generate-website").click()
+        page.wait_for_url("**/builder")
+        frame=page.frame_locator("#live-preview")
+        expect(frame.get_by_role("heading",name="Welcome back")).to_be_visible()
+        frame.get_by_role("button",name="Sign in",exact=True).click()
+        expect(frame.locator("#result")).to_have_text("Prototype form works.")
+        passed("analyze, JSON validation, generate, sandboxed interactive preview (mock AI)")
+        page.locator("#edit-instruction").fill("add a dark mode toggle")
+        page.locator("#apply-edit").click()
+        expect(frame.get_by_role("button",name="Toggle dark mode")).to_be_visible()
+        frame.get_by_role("button",name="Toggle dark mode").click()
+        expect(frame.locator("body")).to_have_class("dark")
+        passed("typed edit and generated interaction (mock AI)")
+        page.locator("#undo-edit").click()
+        expect(frame.get_by_role("button",name="Toggle dark mode")).to_have_count(0)
+        passed("Undo restores previous HTML")
+        page.locator("#edit-file").set_input_files(ROOT/"samples"/"annotations"/"dark-mode-edit.png")
+        expect(page.locator("#apply-sketch-edit")).to_be_enabled()
+        page.locator("#apply-sketch-edit").click()
+        expect(frame.get_by_role("button",name="Toggle dark mode")).to_be_visible()
+        passed("annotated image upload and sketch edit (mock AI)")
+        page.get_by_role("tab",name="Detected spec",exact=True).click()
+        expect(page.locator("#builder-spec")).to_contain_text("Simple login page")
+        page.get_by_role("tab",name="Code",exact=True).click()
+        code=page.locator("#code-editor").input_value()
+        page.locator("#code-editor").fill(code.replace("Welcome back","Hello from paper"))
+        page.locator("#apply-code").click()
+        expect(page.locator("#save-status")).to_have_text("Saved in this browser")
+        page.locator("#copy-code").click()
+        expect(page.locator("#toast")).to_have_text("Copied to clipboard.")
+        page.get_by_role("tab",name="Live preview",exact=True).click()
+        expect(frame.get_by_role("heading",name="Hello from paper")).to_be_visible()
+        with page.expect_download() as event: page.locator("#download-html").click()
+        download=event.value;download.save_as(OUT/"test-download.html")
+        assert "Hello from paper" in (OUT/"test-download.html").read_text()
+        passed("spec/code tabs, manual code edits, copy and HTML download")
+        page.reload()
+        expect(page.frame_locator("#live-preview").get_by_role("heading",name="Hello from paper")).to_be_visible()
+        page.screenshot(path=OUT/"builder-fixture.png",full_page=True)
+        page.get_by_role("link",name="Projects",exact=True).click()
+        expect(page.get_by_role("heading",name="Simple login page",exact=True)).to_be_visible()
+        page.locator("#project-search").fill("no-such-project")
+        expect(page.get_by_role("heading",name="No matching projects.",exact=True)).to_be_visible()
+        page.locator("#project-search").fill("")
+        page.get_by_role("button",name="Archive",exact=True).first.click()
+        page.get_by_role("button",name="Archived",exact=True).click()
+        expect(page.get_by_role("button",name="Restore",exact=True).first).to_be_visible()
+        page.get_by_role("button",name="Restore",exact=True).first.click()
+        passed("reload persistence, project search, archive and restore")
+        page.get_by_role("link",name="Settings",exact=True).click()
+        with page.expect_download() as event:page.locator("#export-projects").click()
+        backup=OUT/"test-backup.json";event.value.save_as(backup)
+        page.locator("#import-projects").set_input_files(backup)
+        expect(page.locator("#toast")).to_have_text("Project backup restored.")
+        page.locator("#default-preview").select_option("mobile")
+        expect(page.locator("#toast")).to_have_text("Preview preference saved.")
+        passed("backup export/restore and saved preview preference")
+        page.goto(base+"/scan?new=1")
+        page.locator("#start-camera").click()
+        expect(page.locator("#camera-video")).to_be_visible()
+        page.locator("#capture-photo").click()
+        expect(page.locator("#capture-image")).to_be_visible()
+        expect(page.locator("#analyze-sketch")).to_be_enabled()
+        page.locator("#retake").click()
+        expect(page.locator("#start-camera")).to_be_visible()
+        passed("webcam start, frame capture and retake with synthetic camera")
+        page.locator("#sketch-file").set_input_files(ROOT/"samples"/"login-sketch.png")
+        expect(page.locator("#capture-image")).to_be_visible()
+        passed("file upload fallback")
+        for path in ["/","/projects","/scan","/models","/settings","/docs","/about"]:
+            page.goto("http://127.0.0.1:5000"+path)
+            expect(page.locator("nav a")).to_have_count(5)
+            assert page.locator("a[href='#']").count()==0
+        passed("all real-app navigation destinations load")
+        page.goto("http://127.0.0.1:5000/scan?sample=1")
+        page.locator("#analyze-sketch").click()
+        expect(page.locator("#page-error")).to_contain_text("GEMINI_API_KEY is missing")
+        expect(page.locator("#analyze-sketch")).to_be_enabled()
+        passed("real application shows missing-key error and permits retry")
+        page.goto("http://127.0.0.1:5000/projects")
+        page.screenshot(path=OUT/"projects-desktop.png",full_page=True)
+        page.goto("http://127.0.0.1:5000/scan")
+        page.screenshot(path=OUT/"scan-desktop.png",full_page=True)
+        page.goto("http://127.0.0.1:5000/")
+        page.screenshot(path=OUT/"landing-desktop.png",full_page=True)
+        for width in [390,768,1440]:
+            page.set_viewport_size({"width":width,"height":900})
+            for path in ["/","/projects","/scan","/review","/builder","/models","/settings","/docs"]:
+                page.goto("http://127.0.0.1:5000"+path)
+                overflow=page.evaluate("document.documentElement.scrollWidth > innerWidth + 2")
+                assert not overflow, f"Horizontal overflow at {width}px: {path}"
+            if width==390:
+                page.goto("http://127.0.0.1:5000/scan")
+                page.screenshot(path=OUT/"scan-mobile.png",full_page=True)
+        passed("responsive layout at 390, 768 and 1440 pixels")
+        assert not errors, errors
+        passed("no uncaught browser JavaScript errors")
+        browser.close()
+    (OUT/"results.json").write_text(json.dumps(results,indent=2),encoding="utf-8")
+
+if __name__=="__main__":
+    main()
