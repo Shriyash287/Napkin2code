@@ -9,3 +9,4 @@ output/
 .model.json
 *.log
 .browser-test/
+.model.tmp

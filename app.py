@@ -1,6 +1,10 @@
 """Local Flask server. API credentials never enter a template or browser response."""
 import os
-from flask import Flask, jsonify, render_template, request, send_from_directory
+import secrets
+import threading
+import time
+from collections import OrderedDict
+from flask import Flask, Response, jsonify, render_template, request, send_from_directory
 from werkzeug.exceptions import HTTPException
 import config
 from core.image_processing import enhance
@@ -8,6 +12,8 @@ from engine.codegen import edit_html, extract_html, spec_to_html
 from engine.vision_ai import extract_annotations, sketch_to_spec, validate_spec
 
 app = Flask(__name__)
+PREVIEWS = OrderedDict()
+PREVIEW_LOCK = threading.Lock()
 app.config["MAX_CONTENT_LENGTH"] = 12 * 1024 * 1024
 app.config["MAX_FORM_MEMORY_SIZE"] = 2 * 1024 * 1024
 
@@ -28,6 +34,11 @@ def response_headers(response):
     response.headers["Referrer-Policy"] = "no-referrer"
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
     response.headers["Permissions-Policy"] = "camera=(self), microphone=()"
+
+    if request.path.startswith("/preview/"):
+        response.headers["Content-Security-Policy"] = "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; sandbox allow-scripts"
+        response.headers["Cache-Control"] = "no-store"
+        return response
     response.headers["Content-Security-Policy"] = (
         "default-src 'self'; script-src 'self'; style-src 'self'; "
         "img-src 'self' data: blob:; font-src 'self'; media-src 'self' blob:; "
@@ -111,6 +122,32 @@ def edit():
     if not instruction:
         raise ValueError("No edit annotations were found. Write a change on the sketch or type an instruction.")
     return jsonify(html=edit_html(html, instruction), instruction=instruction)
+
+
+@app.post("/api/preview")
+def create_preview():
+    data = request.get_json()
+    if not isinstance(data, dict):
+        raise ValueError("Provide HTML to preview.")
+    html = extract_html(text_field(data, "html", 1_000_000))
+    token = secrets.token_urlsafe(24)
+    with PREVIEW_LOCK:
+        now = time.monotonic()
+        for key in list(PREVIEWS):
+            if now - PREVIEWS[key][0] > 1800:
+                del PREVIEWS[key]
+        while len(PREVIEWS) >= 24:
+            PREVIEWS.popitem(last=False)
+        PREVIEWS[token] = (now, html)
+    return jsonify(url="/preview/" + token)
+
+@app.get("/preview/<token>")
+def preview(token):
+    with PREVIEW_LOCK:
+        entry = PREVIEWS.get(token)
+    if entry is None or time.monotonic() - entry[0] > 1800:
+        return Response("This preview expired. Reload the builder to create it again.", status=404, mimetype="text/plain")
+    return Response(entry[1], mimetype="text/html")
 
 @app.errorhandler(ValueError)
 def bad_input(exc):
